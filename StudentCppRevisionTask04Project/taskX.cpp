@@ -39,7 +39,7 @@ string taskX(int number) {
 	if (number < 0) {
 		return "error";
 	}
-	string sec = number % 60 > 9 ? to_string(number % 60) : "0" + to_string(number % 60);
-	string min = number / 60 % 60 > 9 ? to_string(number / 60 % 60) : "0" + to_string(number / 60 % 60);
+	string sec = (number % 60 > 9 ? "" : "0") + to_string(number % 60);
+	string min = (number / 60 % 60 > 9 ? "" : "0") + to_string(number / 60 % 60);
 	return to_string(number / 3600 % 24) + ":" + min + ":" + sec;
 }
